@@ -219,8 +219,8 @@ class TalkingDrum extends Drum {
   playSound() {
 
   }
-}
 
+}
 class Bougarabou extends Drum {
   constructor(material, size) {
     super(material, size);
@@ -230,9 +230,11 @@ class Bougarabou extends Drum {
   
   }
 }
+
 const djembe = new Djembe("Wood", "Medium");
 const talkingDrum = new TalkingDrum("Leather", "Large");
 const bougarabou = new Bougarabou("Wood", "Large");
+
 
 djembe.playSound();
 talkingDrum.playSound();
