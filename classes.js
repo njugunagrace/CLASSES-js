@@ -109,9 +109,9 @@ river.riverChanges();
 
 
 class Nollywood{
-    constructor(title,castMembers,shootingShedule,budget){
+    constructor(title,castMembers,shootingSchedule,budget){
     this.title = title;
-    this.castMembers = castMembers;
+    this.castMembers = " ";
     this.shootingSchedule = shootingSchedule;
     this.budget = budget;
 
@@ -124,3 +124,117 @@ class Nollywood{
         this.budget=budget
     }
 }
+
+class FilmProjectManager{
+    constructor(){
+        this.projects=[];
+    }
+    addProject(project){
+        this.projects.push(project)
+    }
+    removeProject(project){
+        let index=this.projects.indexOf(project)
+        if(index>-1){
+            this.projects.splice(index,1)
+        }
+    }
+    getProjects(){
+        return this.projects
+    }
+}
+// let project1=new Nollywood("Movie1",[Jane,Grace,Wambui],"schedule",1000000);
+// project1.updateShootingSchedule();
+// project1.updateBudget();
+// let projectManager=new FilmProjectManager();
+
+
+
+
+// the magical baobab: in a small village , there is a baobab tree believed to have magical properties . every season ,
+// it bears different types of fruits , each with its own unique power. you've decided to create a software system that tracks the changes in the tree and predicts
+// what type of fruit will bear next season and what powers it will possess. the system should also record the effect of each fruit when consumed
+
+class Fruit{
+    constructor(type,power,effect){
+        this.type=type;
+        this.power=power;
+        this.effect=effect;
+    }
+}
+class Baobab{
+    constructor(){
+        this.fruits=[];
+    }
+    addFruit(fruit){
+        this.fruits.push(fruit);
+    }
+    predictNextFruit(fruit){
+        if(this.fruits.includes(fruit)){
+            return `${fruit} will not bear next season`
+        }
+        else{
+            return `${fruit} may bear next season`
+
+        }
+
+    }
+}
+const baobabTree=new Baobab();
+baobabTree.addFruit('mango');
+baobabTree.addFruit('passion');
+const predict=baobabTree.predictNextFruit("apple");
+console.log(predict);
+
+const fruit1=new Fruit('Mango','energise','strong muscles');
+const fruit2=new Fruit('Apple','energise','strong muscles');
+
+
+
+// The legendary african drum circles: you're a part of a community that hosts one of the largest drum circles , each with its unique sound and rhythm. the Djembe, talking drum and bougarabou are among the popular ones. these drums have common properties such as the material they're made from and their sizes , but they also have distinct characteristics. for instance, the talking drum can mimic the lines of human speech, 
+// the djembe is known for its wide range of tones, and the bougarabou is noted for its deep rich bass tones. you want to create a sofware application model of the drum circle that encapsulates these different types of drums. you wish to include methods for each drum that represent the sound it makes, and also group similar drums together. think about creating a base drum class that contains properties and methods common
+// to all drums and then create subclasses for each specific type of drum (like Djembe,talkingDrum and baogarabou). the subclasses should inherit from the base drum class and also implement their unique characteristics. this software model would help newcomers understand the characteristics of each drum and how they conribute to the overall rhythm of the drum cicle
+
+class Drum{
+    constructor(material,size){
+    this.material=material;
+    this.size=size;
+    }
+    playSound(){
+
+    }
+}
+class Djembe extends Drum{
+    constructor(material,size){
+        super(material,size);
+    }
+    playSound(){
+
+    }
+}
+class TalkingDrum extends Drum {
+    constructor(material, size) {
+      super(material, size);
+    }
+
+  playSound() {
+
+  }
+}
+
+class Bougarabou extends Drum {
+  constructor(material, size) {
+    super(material, size);
+  }
+
+  playSound() {
+  
+  }
+}
+const djembe = new Djembe("Wood", "Medium");
+const talkingDrum = new TalkingDrum("Leather", "Large");
+const bougarabou = new Bougarabou("Wood", "Large");
+
+djembe.playSound();
+talkingDrum.playSound();
+bougarabou.playSound();
+
