@@ -240,3 +240,64 @@ djembe.playSound();
 talkingDrum.playSound();
 bougarabou.playSound();
 
+// You are a music composer known for creating music that adapts to the listener's emotions and surroundings. You want to develop a software system that analyzes the listener's 
+// mood and environment to predict the type of music that would best suit their current state. Think about the classes you'll need to model the music compositions and how to predict the appropriate music based on mood and environment.
+class Music{
+    constructor(title,duration,genre,artist,year){
+        this.title=title;
+        this.duration=duration;
+        this.genre=genre;
+        this.artist=artist;
+        this.year=year;
+    }
+    play() {
+        return `Playing ${this.title} by ${this.artist}`;
+      }
+    pause(){
+        return `Pausing ${this.title} by ${this.artist}`;
+    }
+    stop() {
+        return `Stopping ${this.title} by ${this.artist}`;
+      }
+    
+}
+
+
+class MusicAnalyze{
+    constructor(mood,env){
+        this.mood=mood;
+        this.env=env;
+
+    }
+    mood(){
+        if(mood>7){
+            return `${this.genre} is best suited for you`;
+        }
+        else if(mood==7){
+            return `${this.genre} is best suited for you`;
+        }
+        else{
+            return `${this.genre} is best suited for you`;
+        }
+    }
+    analyzeEnvironment(){
+        if(env=="cool"){
+            return `${this.genre} is best suited for our customer`;
+        }
+        else if(env=="noisy"){
+            return `${this.genre} is best suited for our customer`;
+
+        }
+    }
+}
+
+music1=new Music("Driver's license",5,"Rnb","Olivia Rodrigo",2019);
+music2=new Music("Minefields",5,"Rnb","Faouzia",2019);
+console.log(music1);
+console.log(music1.play());
+console.log(music1.pause());
+
+console.log(music2);
+analyzeA=new MusicAnalyze(6,"noisy");
+console.log(analyzeA);
+
